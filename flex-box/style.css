@@ -1,0 +1,181 @@
+
+.head{
+    position: fixed;
+    margin: auto;
+    padding: 5px;
+    border: 1px dashed aqua;
+    border-radius: 5px;
+    background-color:white;
+    text-align:center;
+    width:30%;
+    right:2%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+
+.flex-item, .flex-items{
+    text-align: center;
+    background-color: chartreuse;
+    color:cornsilk;
+    margin: 5px;
+    padding: 20px;
+    font-size: 30px;
+    width:50px;
+    height:45px;
+}
+
+.flex-container{
+    display: flex;
+    background-color: aqua;
+    border-radius: 1%;
+    -webkit-border-radius: 1%;
+    -moz-border-radius: 1%;
+    -ms-border-radius: 1%;
+    -o-border-radius: 1%;
+}
+
+.flex-container:nth-of-type(n+4){
+    height: 200px;
+}
+
+
+
+/*1) PARENT PROPERTIES = FLEX DIRECTION = COLUMN/COLUMN REVERSE/ROW/ROW REVERSE*/
+
+.flex-container-0{
+   flex-direction: column-reverse;
+}
+
+/* 2)PARENT PROPERTY = FLEX WRAP =vWRAP/NO WRAP/WRAP REVERSE */
+.flex-container-1{
+    flex-wrap:wrap;
+}
+
+/* 3) PARENT PROPERTY = FLEX FLOW = ROW WRAP/COLUMN WRAP */
+.flex-container-2{
+    flex-flow:row-wrap;
+}
+
+/* 4) PARENT PROPERTY = JUSTIFY CONTENT=CENTER*/
+.flex-container-3{
+    justify-content:center;
+}
+
+/* 5) PARENT PROPERTY = JUSTIFY CONTENT=FEX START*/
+.flex-container-4{
+    align-content:flex-start;
+}
+
+/* 6) PARENT PROPERTY = JUSTIFY CONTENT =FLEX END */
+.flex-container-5{
+    justify-content:flex-end;
+    
+}
+
+/* 7) PARENT PROPERTY = JUSTIFY CONTENT =SPACE AROUND */
+.flex-container-6{
+    justify-content:space-around;    
+}
+
+/* 8) PARENT PROPERTY = JUSTIFY CONTENT = SPACE BETWEEN */
+.flex-container-7{
+    justify-content:space-between;   
+}
+
+/* 9) PARENT PROPERTY = JUSTIFY CONTENT = SPACE EVENLY */
+.flex-container-8{
+    justify-content:space-evenly;    
+}
+
+/* 10) PARENT PROPERTY = ALIGN ITEMS = CENTER */
+.flex-container-9{
+    align-items:center;  
+    justify-content: center;  
+}
+
+/* 11) PARENT PROPERTY = ALIGN ITEMS = FLEX START */
+.flex-container-10{
+    align-items:flex-start;  
+}
+
+/* 12) PARENT PROPERTY = ALIGN ITEMS = FLEX END */
+.flex-container-11{
+    align-items:flex-end;  
+}
+
+/* 13) PARENT PROPERTY = ALIGN ITEMS= STRETCH */
+.flex-container-12{
+    align-items:stretch;  
+}
+
+/*  14) PARENT PROPERTY = ALIGN ITEMS = BASELINE */
+.flex-container-13{
+    align-items:baseline;  
+}
+
+/* 15) PARENT PROPERTY = ALIGN CONTENT = CENTER */
+.flex-container-14{
+    align-content:center;
+    flex-wrap:wrap;  
+}
+
+/* 16) PARENT PROPERTY = ALIGN CONTENT = FLEX START */
+.flex-container-15{
+    align-content:flex-start; 
+    flex-wrap:wrap;   
+}
+
+/* 17) PARENT PROPERTY = ALIGN CONTENT = FLEX END */
+.flex-container-16{
+    align-content:flex-end;    
+    flex-wrap:wrap;  
+}
+
+/* 18) PARENT PROPERTY = ALIGN CONTENT = STRETCH */
+.flex-container-17{
+    align-content:stretch; 
+    flex-wrap:wrap;   
+    height: 500px;
+}
+
+/* 19) PARENT PROPERTY = ALIGN CONTENT = SPACE AROUND */
+.flex-container-18{
+    align-content:space-around;  
+    flex-wrap:wrap;  
+    height: 500px;
+}
+
+/* 20) PARENT PROPERTY = ALIGN CONTENT = SPACE BETWEEN */
+.flex-container-19{
+    align-content:space-between; 
+    flex-wrap:wrap;   
+    height: 500px;
+}
+
+/* 21) CHILD PROPERTY = ORDER */
+/*22) CHILD PROPERTY = FLEX GROW */
+.flex-container-20{
+    align-items:center;  
+    justify-content: center;
+}
+
+/* 23) CHILD PROPERTY = FLEX SHRINK */
+.flex-container-21{
+    align-items: center;
+}   
+.flex-container-21 > .flex-items{
+    width:90px;
+    height:90px;
+}    
+
+.flex-container-22 > .flex-items{
+    height:auto;
+}
+
+
+
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App using JS</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <span id='ctr'></span>
+        <div class="quiz-container hide" id="que-con">
+            <div class="ques" id=qet>Questions</div>
+            <div class="ans-grid" id="answ">
+                <button class="ans-btn " id="a1">Ans -1</button>
+                <button class="ans-btn " id="a2">Ans -2</button>
+                <button class="ans-btn" id="a3">Ans-3</button>
+                <button class="ans-btn" id="a4">Ans-4</button>
+            </div>
+        </div>
+        <div class="control">
+            <button class="str-btn " id="strt">START</button>
+            <button class="next-btn hide" id="nxt">NEXT</button>
+        </div>
+        <div class="instr hide" id="inst">
+            <p>This quiz exam contains Mcq where you have to choose one of the best choices you know.<br>
+                    <b>Note:</b><br>Each correct answer is counted at end. <br>
+                    You need 50% to pass this exam.
+            </p>
+            <button id="ibutton">Start Quiz </button>
+        </div>
+        
+    </div>
+    <script defer src="script.js"></script>
+</body>
+</html>

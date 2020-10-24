@@ -1,0 +1,16 @@
+body{
+    font-family: Georgia;   
+}
+
+.container{
+    width:75%;
+    height:auto;
+     background-color: aquamarine;
+}
+.btclas{
+    width:31%;
+    height:48px;
+    font-size: 24px;
+    margin:5px;
+    border-radius: 5px;
+}

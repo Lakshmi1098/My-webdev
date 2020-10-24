@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App using JS</title>
+    <style>
+        *,*::before,*::after{
+            box-sizing: border-box;
+            font-family:  cosmic sans ms;
+            font-size: 30px;
+        }
+        
+        :root{
+            --hue-neutral:275;
+            --sat-neutral:78%;
+            --lit-neutral:50%;
+            --hue-correct:123.13;
+            --sat-correct:46.18%;
+            --lit-correct:51.18%;
+            --hue-wrong:0.55;
+            --sat-wrong:98.2%;
+            --lit-wrong:56.47%;
+        
+        } 
+        body{
+            --hue:var(--hue-neutral);
+            --sat:var(--sat-neutral);
+            --lit:var(--lit-neutral); 
+            padding:0;
+            margin:0;
+            display: flex;
+            width:100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: hsl(var(--hue),var(--sat),var(--lit)); 
+        }
+        
+        body.correct{
+            --hue:var(--hue-correct);
+            --sat:var(--sat-correct);
+            --lit:var(--lit-correct); 
+        }
+        
+        body.wrong{
+            --hue:var(--hue-wrong);
+            --sat:var(--sat-wrong);
+            --lit:var(--lit-wrong); 
+        }
+        
+        .container{
+            width: 1000px;
+            background-color: cornsilk;
+            border-radius: 35px;
+            box-shadow: 0 0 10px 2px;
+            padding:5px;
+        } 
+        
+        .ques{
+            font-size: 35px;
+            text-align: left;
+            color:purple;
+            margin-top:5 px;
+            margin-left: 15px;
+        }
+        
+        .ans-grid{
+            display: grid;
+            grid-template-columns:repeat(2,auto);
+            gap:20px ;
+            margin: 40px 40px;
+        }
+        
+        .ans-btn{
+            --hue: var(--hue-neutral);
+            --sat: var(--sat-neutral);
+            min-height: 80px;
+            background-color: hsl(var(--hue),var(--sat),70%);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 2px 2px violet ;
+            padding:5px 5px;
+        }
+        
+        .ans-btn:hover{
+            border: 3px solid purple;
+        }
+        
+        .ans-btn.correct{
+            --hue:var(--hue-correct);
+            --sat:var(--sat-correct);
+            --lit:var(--lit-correct);
+        }
+        
+        .ans-btn.wrong{
+            --hue:var(--hue-wrong);
+            --sat:var(--sat-wrong);
+            --lit:var(--lit-wrong); 
+        }
+        
+        .control{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .str-btn, .next-btn{
+            font-size: 80px;
+            --hue: var(--hue-neutral);
+            --sat: var(--sat-neutral);
+            background-color: hsl(var(--hue),var(--sat),70%);
+            padding:10px 20px;    
+            color: white;
+            border-radius: 10px;   
+            border:2px solid  hsl(var(--hue),var(--sat),70%);
+        }
+        .str-btn{
+            margin: 40px;
+        }
+        .str-btn:hover{
+            border: 2px solid purple;
+            box-shadow: 1px 1px 10px 2px purple;
+        }
+        .hide{
+            display: none;
+        }
+        
+        .instr{
+            padding:20px;
+            font-size: 30px;
+            text-align: left;
+            color:purple;
+            margin-top:5 px;
+            margin-left: 15px;
+        }
+        
+        #ibutton{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            --hue: var(--hue-neutral);
+            --sat: var(--sat-neutral);
+            background-color: hsl(var(--hue),var(--sat),70%);
+            padding:10px 20px;    
+            color: white;
+            border-radius: 10px;   
+            border:2px solid  hsl(var(--hue),var(--sat),70%);
+        }
+        
+        #ibutton:hover{
+            border: 2px solid purple;
+            box-shadow: 1px 1px 10px 2px purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span id='ctr'></span>
+        <div class="quiz-container hide" id="que-con">
+            <div class="ques" id=qet>Questions</div>
+            <div class="ans-grid" id="answ">
+                <button class="ans-btn " id="a1">Ans -1</button>
+                <button class="ans-btn " id="a2">Ans -2</button>
+                <button class="ans-btn" id="a3">Ans-3</button>
+                <button class="ans-btn" id="a4">Ans-4</button>
+            </div>
+        </div>
+        <div class="control">
+            <button class="str-btn " id="strt">START</button>
+            <button class="next-btn hide" id="nxt">NEXT</button>
+        </div>
+        <div class="instr hide" id="inst">
+            <p>This quiz exam contains Mcq where you have to choose one of the best choices you know.<br>
+                    <b>Note:</b><br>Each correct answer is counted at end. <br>
+                    You need 50% to pass this exam.
+            </p>
+            <button id="ibutton">Start Quiz </button>
+        </div>
+        
+    </div>
+    <script >
+        const que=document.getElementById('qet');
+        const ans=document.getElementById('answ');
+        const start=document.getElementById('strt');
+        const  next=document.getElementById('nxt');
+        const intr=document.getElementById('inst');
+        const qcon=document.getElementById("que-con");
+        const ibtn=document.getElementById('ibutton');
+        let index, shuffled;
+        let countr=0;
+
+        start.addEventListener("click",startInst);
+        next.addEventListener("click",() =>{
+            index++;
+            startNext();
+        });
+
+        function startInst(){
+            start.classList.add('hide');
+            intr.classList.remove('hide');
+        }
+
+        ibtn.addEventListener("click",startGame);
+
+        function startGame(){
+            countr=0;
+            intr.classList.add('hide');
+            shuffled=questions.sort(() => Math.random() - 0.5);
+            index=0;
+            qcon.classList.remove('hide');
+            startNext();
+        }
+
+        function startNext(){
+            resets();
+            showq(shuffled[index])
+        }
+
+        function showq(e){
+            que.innerText = e.quest;
+            e.answers.forEach(ele => {
+                const button=document.createElement('button');
+                button.innerText=ele.text;
+                button.classList.add('ans-btn');
+                if(ele.correct){
+                    button.dataset.correct = ele.correct;
+                }
+                button.addEventListener("click",selans)
+                ans.appendChild(button);
+            })
+        }
+
+        function resets(){
+            next.classList.add('hide');
+            while(ans.firstChild){
+                ans.removeChild(ans.firstChild)
+            }
+        }
+
+        function selans(a) {
+            const selbtn = a.target
+            const correct = selbtn.dataset.correct
+            setStatus(document.body, correct)
+            Array.from(ans.children).forEach(button => {
+            setStatus(button, button.dataset.correct)
+            })
+            if (shuffled.length > index + 1) {
+            next.classList.remove('hide')
+            }
+            else {
+            start.innerText = 'Restart'
+            start.classList.remove('hide')
+            }
+            if(selbtn.dataset= correct){
+                countr++;
+            }
+            document.getElementById(ctr).innerHTML=countr;
+        }
+        
+        function setStatus(element, correct) {
+            clearStatus(element)
+            if (correct) {
+            element.classList.add('correct')
+            } else {
+            element.classList.add('wrong')
+            }
+        }
+        
+        function clearStatus(element) {
+            element.classList.remove('correct')
+            element.classList.remove('wrong')
+        }
+
+        //give question here //
+        const questions=[
+            {
+                quest : " What is 2+2  ?",
+                answers : [
+                    {text:'4', correct:true},
+                    {text:'22', correct:false},
+                    {text:'2', correct:false},
+                    {text:'3', correct: false}
+                ]
+            },
+
+            {
+                quest: "How many alphabets are there in English ?",
+                answers:[
+                    {text: '80', correct: false},
+                    {text: '56', correct: false},
+                    {text: '26', correct: true},
+                    {text: '20', correct: false}
+                ]
+            },
+
+            {
+                quest: "What is chemical formula for water ?",
+                answers:[
+                    {text: 'CO2', correct: false},
+                    {text: 'N2O', correct: false},
+                    {text: 'H2O', correct: true},
+                    {text: 'NH3', correct: false},
+                ]
+            }
+        ]
+    </script>
+</body>
+</html>

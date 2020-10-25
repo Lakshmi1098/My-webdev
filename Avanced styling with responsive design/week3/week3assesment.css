@@ -1,0 +1,125 @@
+body{
+        font-family: 'cursive';
+        box-sizing: border-box;
+        background:radial-gradient(circle, rgba(205,87,139,1) 0%, rgba(87,148,219,1) 85%);
+        background-repeat: no-repeat;
+        color:black;
+}
+
+h1{
+        text-align: center;
+}
+a{
+        display:block;
+        color:white;
+        text-decoration: none;
+        border: 1px solid blue;
+        padding:5px;
+        text-align:center;
+        border-radius: 20px;
+        font-size: 20px;
+        width:300px;
+}
+
+@media screen and (min-width:280px) {
+
+        section{
+                padding-bottom: 15px;
+        }
+
+        img{
+                visibility: visible;
+                margin-left: 33%;
+                margin-top: 10px;
+        }
+
+        .image-container{
+                visibility: hidden;
+                display: none;
+        }
+}
+
+@media screen and (min-width:540px){
+        img{
+                width:150px;
+                height:100px;
+        }
+
+        .link{
+                margin:3px;
+        }
+
+        .image-container{
+                visibility: hidden;
+                display: none;
+        }
+}
+
+@media screen and (min-width:767px) {
+        .container{
+                display: flex;
+        }
+        .row-1{
+                display: inline-flex;
+        } 
+        .link{
+                margin:5px;
+                width: 300px;
+                margin: 20px;
+        }
+        .l1, .l2{
+                margin-left: 60px;
+        }
+        .img-1{
+                visibility:hidden;
+                display: none;
+                margin-left: 35%;
+                margin-top: 10px;
+        }
+
+        .image-container{
+                visibility: visible;
+                display: inline;
+        }
+
+        .img-2{
+                justify-self: start;
+                margin-left: 20px;
+                border: 1px solid black;
+        }
+        hr{
+                margin-right: 23px;
+        }
+
+}
+
+
+
+a:hover{
+        text-decoration: none;
+        text-transform: uppercase;
+        color:blue;
+        background-color: cornsilk;
+}
+
+.link-1{
+        justify-items: center;
+}
+
+.section {
+        border: 1px solid black;
+        padding:3px;
+        border-radius: 15px;
+        margin: 3px;
+      
+}
+
+.p{
+        text-indent: 15px;
+}
+
+img{
+        width:100px;
+        height:60px;
+}
+

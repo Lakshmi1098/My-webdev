@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Week3 Assessment</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- <link href="week3assesment.css" rel="stylesheet"> -->
+        <style>
+                body{
+        font-family: 'cursive';
+        box-sizing: border-box;
+        background:radial-gradient(circle, rgba(205,87,139,1) 0%, rgba(87,148,219,1) 85%);
+        background-repeat: no-repeat;
+        color:black;
+}
+
+h1{
+        text-align: center;
+}
+a{
+        display:block;
+        color:white;
+        text-decoration: none;
+        border: 1px solid blue;
+        padding:5px;
+        text-align:center;
+        border-radius: 20px;
+        font-size: 20px;
+        width:300px;
+}
+
+@media screen and (min-width:280px) {
+
+        section{
+                padding-bottom: 15px;
+        }
+
+        img{
+                visibility: visible;
+                margin-left: 33%;
+                margin-top: 10px;
+        }
+
+        .image-container{
+                visibility: hidden;
+                display: none;
+        }
+}
+
+@media screen and (min-width:540px){
+        img{
+                width:150px;
+                height:100px;
+        }
+
+        .link{
+                margin:3px;
+        }
+
+        .image-container{
+                visibility: hidden;
+                display: none;
+        }
+}
+
+@media screen and (min-width:767px) {
+        .container{
+                display: flex;
+        }
+        .row-1{
+                display: inline-flex;
+        } 
+        .link{
+                margin:5px;
+                width: 300px;
+                margin: 20px;
+        }
+        .l1, .l2{
+                margin-left: 60px;
+        }
+        .img-1{
+                visibility:hidden;
+                display: none;
+                margin-left: 35%;
+                margin-top: 10px;
+        }
+
+        .image-container{
+                visibility: visible;
+                display: inline;
+        }
+
+        .img-2{
+                justify-self: start;
+                margin-left: 20px;
+                border: 1px solid black;
+        }
+        hr{
+                margin-right: 23px;
+        }
+
+}
+
+
+
+a:hover{
+        text-decoration: none;
+        text-transform: uppercase;
+        color:blue;
+        background-color: cornsilk;
+}
+
+.link-1{
+        justify-items: center;
+}
+
+.section {
+        border: 1px solid black;
+        padding:3px;
+        border-radius: 15px;
+        margin: 3px;
+      
+}
+
+.p{
+        text-indent: 15px;
+}
+
+img{
+        width:30%;
+        min-width: 50px;
+        max-width: 750px;
+        height:25%;
+        min-height: 60px;
+        max-height: 200px;
+}
+
+
+        </style>
+</head>
+<body>
+        <body>
+                <h1>Web Designing is Awesome</h1>
+                <div class="container">
+                        <div class="row row-1 ">
+                                <div><a href="#" class=" link l1 col-xs-12 col-md-6 col-lg-6">Link 1</a></div>
+                                <div><a href="#" class=" link l2 col-xs-12 col-md-6 col-lg-6">Link 2</a></div>
+                        </div>
+                </div>
+                
+
+                <div class="container ">
+                        <div class="row ">
+                                <div class="col-sm-4">
+                                        <h2>Why Im coding</h2>
+                                        <ol>
+                                                <li>Required</li>
+                                                <li>Learnig</li>
+                                                <li>Knowing</li>
+                                        </ol>
+                                </div>
+                                <div class="col-sm-8">
+                                        <h2>Want to Know more?</h2>
+                                        <div class="section col-md-12">
+                                                <br>
+                                                <section class="p col-md-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aperiam rem reiciendis suscipit quidem odit laudantium maxime, eaque cupiditate nobis. Voluptates ad illo sit ab id enim perferendis totam tenetur?<br><img src="week3assesmentimg1.jpg" class="img-1"><br></section>
+                                                <section class="p col-md-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id, earum consectetur alias sunt quisquam dolor debitis, molestias asperiores voluptates sapiente nam assumenda minima. Debitis pariatur ut temporibus soluta quod tenetur.<br><img src="week3assesmentimg2.jpg" class="img-1"><br></section>
+                                                <section class="p col-md-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim non aut dolorum ducimus quisquam, sit provident. Cum beatae quae quisquam dolore tempora, error consectetur maxime, quod totam eveniet, libero veniam.<br><img src="week3assesmentimg3.jpg" class="img-1"></section>
+                                                <br>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <br><br><br>
+                <div class="image-container">
+                        <h2 style="text-align:center">IMage Details</h2>
+                        <ul style="list-style-type: none">
+                                <li><div clsass="image-class"><img src="week3assesmentimg2.jpg"  class="img-2"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis et provident omnis quisquam qui reiciendis voluptatibus labore quidem, magnam perspiciatis quas in dolor nisi tempora cumque, quia, sequi eius ullam?</p></div></li><hr>
+                                <li><div clsass="image-class"><img src="week3assesmentimg1.jpg" class="img-2"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque accusamus fuga ea eius soluta molestiae ab neque. Consequatur cupiditate numquam velit dolor alias minus et debitis dolorum placeat? Fugiat, atque.</p></div></li><hr>
+                                <li><div clsass="image-class"><img src="week3assesmentimg3.jpg"  class="img-2"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et eos doloremque adipisci dolorum hic nisi molestiae officia veniam nostrum sapiente, cupiditate eligendi error praesentium quisquam soluta reprehenderit sint accusamus? Nostrum.</p></div></li><br>
+                
+                        </ul>
+                </div>
+
+
+                
+                <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+        </body>
+</html>
